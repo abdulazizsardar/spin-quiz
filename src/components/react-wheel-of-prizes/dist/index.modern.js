@@ -1,3 +1,4 @@
+import { message } from 'antd';
 import React, { useState, useEffect } from 'react';
 
 var WheelComponent = function WheelComponent(_ref) {
@@ -115,6 +116,7 @@ var WheelComponent = function WheelComponent(_ref) {
 
     if (finished) {
       canvasContext.fillText(`${currentSegment} is the winner`, centerX + 10, centerY + size + 50);
+      message.info(`${currentSegment} is the winner`)
       setFinished(true);
       onFinished(currentSegment);
       clearInterval(timerHandle);

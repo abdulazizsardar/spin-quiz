@@ -1,5 +1,6 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+const { message } = require("antd");
 var React = require('react');
 var React__default = _interopDefault(React);
 
@@ -118,7 +119,7 @@ var WheelComponent = function WheelComponent(_ref) {
 
     if (finished) {
       canvasContext.fillText(`${currentSegment} is the winner`, centerX + 10, centerY + size + 50);
-
+      message.info(`${currentSegment} is the winner`)
       setFinished(true);
       onFinished(currentSegment);
       clearInterval(timerHandle);
